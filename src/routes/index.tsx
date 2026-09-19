@@ -43,29 +43,29 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-cream">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
-          <div className="relative">
-            <span className="pill-btn bg-accent/25 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-wood-dark">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-2 lg:px-10 lg:py-24">
+          <div className="relative max-w-2xl">
+            <span className="pill-btn bg-accent/25 px-4 py-2 text-xs font-bold uppercase leading-none tracking-[0.14em] text-wood-dark">
               🌿 Good Food • Good Health Always!
             </span>
-            <h1 className="mt-5 font-display text-5xl leading-[1.05] text-primary md:text-7xl">
+            <h1 className="mt-6 font-display text-[3.25rem] leading-[0.98] tracking-tight text-primary sm:text-6xl lg:text-7xl">
               FRESH STOCK
-              <span className="relative ml-3 inline-block">
-                <span className="relative z-10 rounded-2xl bg-primary px-3 py-1 text-accent">
+              <span className="relative mt-3 block w-fit">
+                <span className="relative z-10 block rounded-2xl bg-primary px-4 py-2 text-accent sm:px-5 sm:py-2.5">
                   IS BACK!
                 </span>
                 <span className="absolute -right-4 -top-4 text-2xl text-accent">✦</span>
                 <span className="absolute -bottom-3 -left-3 text-xl text-accent">✦</span>
               </span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-muted-foreground">
+            <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
               Premium quality almonds, cashews, walnuts, seeds & healthy snacks — delivered fresh
               to your door.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/shop"
-                className="pill-btn bg-primary px-7 py-3.5 text-primary-foreground shadow-soft hover:bg-primary/90"
+                className="pill-btn bg-primary px-7 py-3.5 text-primary-foreground shadow-soft hover:bg-primary/90 sm:w-auto"
               >
                 Shop Now
               </Link>
@@ -73,14 +73,14 @@ function HomePage() {
                 href={waLink("Hi Pango Dry Fruits! I'd like to place an order.")}
                 target="_blank"
                 rel="noreferrer"
-                className="pill-btn border border-primary/30 bg-card px-7 py-3.5 text-primary hover:bg-primary/10"
+                className="pill-btn border border-primary/30 bg-card px-7 py-3.5 text-primary hover:bg-primary/10 sm:w-auto"
               >
                 <MessageCircle className="h-4 w-4" /> Order via WhatsApp
               </a>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="absolute -inset-4 rounded-[3rem] bg-accent/20 blur-2xl" aria-hidden />
             <img
               src={heroBowl}
