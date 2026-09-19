@@ -96,12 +96,12 @@ function ShopPage() {
           <h2 className="mb-3 hidden text-sm font-bold uppercase tracking-wider text-muted-foreground lg:block">
             Categories
           </h2>
-          <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+          <div className="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
             {filters.map((c) => (
               <button
                 key={c}
                 onClick={() => select(c)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors lg:text-left ${
+                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors sm:px-4 sm:py-2 sm:text-sm lg:text-left ${
                   active === c
                     ? "bg-primary text-primary-foreground"
                     : "border border-border bg-card text-foreground/75 hover:border-primary hover:text-primary"
@@ -113,7 +113,7 @@ function ShopPage() {
           </div>
         </aside>
 
-        <section>
+        <section className="min-w-0">
           {products.length === 0 ? (
             <div className="rounded-3xl border border-dashed border-border bg-card py-20 text-center">
               <p className="text-lg font-semibold text-foreground">
@@ -121,7 +121,7 @@ function ShopPage() {
               </p>
             </div>
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-3">
               {products.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
