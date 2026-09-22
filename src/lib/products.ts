@@ -15,6 +15,12 @@ import kaliKishmish from "@/assets/kali_kishmish.png";
 import gourbandiBadam from "@/assets/gourbandi_badam.png";
 import sonoraBadam from "@/assets/sonora_badam.png";
 import walnutInShell from "@/assets/wallnut_in_shell.png";
+import amlaCandyWithSugar from "@/assets/Amla Candy (With Sugar).png";
+import amlaCandyWithoutSugar from "@/assets/Amla Candy (Without Sugar).png";
+import mexicanSeedsMix from "@/assets/Mexican seeds.png";
+import munakka from "@/assets/Munaka.png";
+import paanShots from "@/assets/Paan Shots.png";
+import proteinSeedsMix from "@/assets/protiesn_beans.png";
 
 export type Weight = "250g" | "500g" | "1kg";
 
@@ -105,13 +111,33 @@ export const PRODUCTS: Product[] = [
   p("Pumpkin Seeds", "Healthy Seeds", { "250g": 190, "500g": 365, "1kg": 720 }),
   p("Flax (Alsi) Seeds", "Healthy Seeds", { "250g": 65, "500g": 120 }),
 
-  p("Amla Candy (With Sugar)", "Healthy Snacks & Candies", { "500g": 165, "1kg": 320 }),
-  p("Amla Candy (Without Sugar)", "Healthy Snacks & Candies", { "500g": 165, "1kg": 320 }),
-  p("Paan Shots", "Healthy Snacks & Candies", { "500g": 385, "1kg": 760 }),
+  p(
+    "Amla Candy (With Sugar)",
+    "Healthy Snacks & Candies",
+    { "500g": 165, "1kg": 320 },
+    amlaCandyWithSugar,
+  ),
+  p(
+    "Amla Candy (Without Sugar)",
+    "Healthy Snacks & Candies",
+    { "500g": 165, "1kg": 320 },
+    amlaCandyWithoutSugar,
+  ),
+  p("Paan Shots", "Healthy Snacks & Candies", { "500g": 385, "1kg": 760 }, paanShots),
   p("Cranberry", "Healthy Snacks & Candies", { "500g": 355, "1kg": 700 }),
-  p("Munakka", "Healthy Snacks & Candies", { "500g": 495, "1kg": 980 }),
-  p("Mexican Seeds Mix", "Healthy Snacks & Candies", { "500g": 405, "1kg": 800 }),
-  p("Protein Seeds Mix", "Healthy Snacks & Candies", { "500g": 450, "1kg": 900 }),
+  p("Munakka", "Healthy Snacks & Candies", { "500g": 495, "1kg": 980 }, munakka),
+  p(
+    "Mexican Seeds Mix",
+    "Healthy Snacks & Candies",
+    { "500g": 405, "1kg": 800 },
+    mexicanSeedsMix,
+  ),
+  p(
+    "Protein Seeds Mix",
+    "Healthy Snacks & Candies",
+    { "500g": 450, "1kg": 900 },
+    proteinSeedsMix,
+  ),
   p("Mix Berry", "Healthy Snacks & Candies", { "500g": 500, "1kg": 1000 }),
   p("Trail Mix (Dry Fruits, Nuts & Seeds)", "Healthy Snacks & Candies", {
     "500g": 500,
