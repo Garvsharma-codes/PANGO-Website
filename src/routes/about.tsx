@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Award, Gift, Leaf, MessageCircle, Tag } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import lifestyle from "@/assets/lifestyle.jpg";
+import giftHamper from "@/assets/gift-hamper.jpg";
 import { waLink } from "@/lib/products";
 
 export const Route = createFileRoute("/about")({
@@ -51,16 +52,16 @@ function AboutPage() {
             and we taste and inspect what we sell before it ever reaches your home.
           </p>
           <p>
-            Freshness is the heart of what we do. Our stock is refreshed regularly — that is why
-            you will often see us announcing "Fresh Stock is Back!" — and every single order is
-            packed at the time of ordering, never scooped from something that has been sitting on
-            a shelf for weeks.
+            Freshness is the heart of what we do. Our stock is refreshed regularly — that is why you
+            will often see us announcing "Fresh Stock is Back!" — and every single order is packed
+            at the time of ordering, never scooped from something that has been sitting on a shelf
+            for weeks.
           </p>
           <p>
-            We also believe good quality should not come with confusing pricing. Our rates stay
-            fair and transparent, with 250g, 500g and 1kg packs so you can buy exactly what suits
-            you. Our mission is simple: to make healthy, natural snacking a natural part of
-            everyday family life.
+            We also believe good quality should not come with confusing pricing. Our rates stay fair
+            and transparent, with 250g, 500g and 1kg packs so you can buy exactly what suits you.
+            Our mission is simple: to make healthy, natural snacking a natural part of everyday
+            family life.
           </p>
         </div>
       </section>
@@ -79,8 +80,8 @@ function AboutPage() {
               },
               {
                 icon: Tag,
-                title: "Best Prices",
-                copy: "Honest, market-fair pricing with multiple pack sizes to choose from.",
+                title: "Direct from source, no middlemen",
+                copy: "TODO: Confirm this sourcing claim before publishing.",
               },
               {
                 icon: Leaf,
@@ -109,14 +110,44 @@ function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16">
+        <h2 className="text-center font-display text-3xl text-primary md:text-4xl">How we pack</h2>
+        <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
+          A careful journey from weighing to sealing.{" "}
+          {/* TODO: Replace placeholder images with real photos. */}
+        </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-3">
+          {[
+            { title: "Weighing", image: lifestyle },
+            { title: "Packing", image: giftHamper },
+            { title: "Sealed box", image: aboutHero },
+          ].map((slot) => (
+            <div
+              key={slot.title}
+              className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
+            >
+              <img
+                src={slot.image}
+                alt={`Placeholder for ${slot.title.toLowerCase()} photo`}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <p className="p-4 text-center text-sm font-semibold">{slot.title}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid items-center gap-8 overflow-hidden rounded-[2.5rem] bg-primary p-6 text-primary-foreground md:grid-cols-2 md:p-12">
           <div>
             <h2 className="font-display text-3xl text-accent md:text-4xl">Our Quality Promise</h2>
             <p className="mt-5 text-primary-foreground/85">
               From sourcing to sealing, everything is handled hygienically in clean, controlled
-              conditions. We buy in small, frequent lots so stock keeps moving, store it properly
-              to protect flavour and crunch, and reject anything that does not meet our standard.
-              What reaches you is what we would happily serve at our own table.
+              conditions. We buy in small, frequent lots so stock keeps moving, store it properly to
+              protect flavour and crunch, and reject anything that does not meet our standard. What
+              reaches you is what we would happily serve at our own table.
+            </p>
+            <p className="mt-4 font-semibold text-accent">
+              Not happy with the quality? We'll replace it.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

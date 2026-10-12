@@ -13,6 +13,8 @@ import {
   waLink,
 } from "@/lib/products";
 import { ProductCard } from "@/components/site/ProductCard";
+import { ReviewSection } from "@/components/site/ReviewSection";
+import { FeedbackForm } from "@/components/site/FeedbackForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,8 +61,8 @@ function HomePage() {
               </span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
-              Premium quality almonds, cashews, walnuts, seeds & healthy snacks — delivered fresh
-              to your door.
+              Premium quality almonds, cashews, walnuts, seeds & healthy snacks — delivered fresh to
+              your door.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -70,7 +72,7 @@ function HomePage() {
                 Shop Now
               </Link>
               <a
-                href={waLink("Hi Pango Dry Fruits! I'd like to place an order.")}
+                href={waLink("Hi Pango Dry Fruits! I'd like to place a 250g trial order.")}
                 target="_blank"
                 rel="noreferrer"
                 className="pill-btn border border-primary/30 bg-card px-7 py-3.5 text-primary hover:bg-primary/10 sm:w-auto"
@@ -78,6 +80,16 @@ function HomePage() {
                 <MessageCircle className="h-4 w-4" /> Order via WhatsApp
               </a>
             </div>
+            <p className="mt-5 rounded-2xl bg-accent/20 px-4 py-3 text-sm font-semibold text-wood-dark">
+              250g Trial Order · Start with 250g. Free delivery. Pay after you receive it.
+              {/* TODO: Confirm pay-on-delivery wording before publishing. */}
+            </p>
+            <a
+              href="#hampers"
+              className="pill-btn mt-4 border border-primary/30 bg-card px-5 py-3 text-sm text-primary hover:bg-primary/10"
+            >
+              Corporate Diwali Hampers
+            </a>
           </div>
 
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
@@ -98,7 +110,7 @@ function HomePage() {
         <div className="mx-auto grid max-w-5xl gap-4 px-4 py-6 text-center sm:grid-cols-3">
           {[
             { icon: Award, label: "Premium Quality" },
-            { icon: Tag, label: "Best Prices" },
+            { icon: Tag, label: "Direct from source, no middlemen" },
             { icon: Leaf, label: "Fresh Stock Available" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center justify-center gap-2 text-wood-dark">
@@ -108,6 +120,8 @@ function HomePage() {
           ))}
         </div>
       </section>
+
+      <ReviewSection />
 
       {/* CATEGORIES */}
       <section className="mx-auto max-w-7xl px-4 py-16">
@@ -189,6 +203,61 @@ function HomePage() {
         </div>
       </section>
 
+      {/* CORPORATE HAMPERS */}
+      <section id="hampers" className="bg-cream-deep/60 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading eyebrow="Corporate gifting" title="Corporate Diwali Hampers" />
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground">
+            Thoughtful festive gifting for teams, clients and partners. {/* TODO: Confirm MOQ. */}
+            Bulk orders welcome — minimum order quantity: TODO.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                name: "Basic",
+                price: "TODO: Add price",
+                contents: ["TODO: Add dry fruit selection", "Festive box", "Greeting card"],
+              },
+              {
+                name: "Premium",
+                price: "TODO: Add price",
+                contents: ["TODO: Add premium selection", "Decorative hamper", "Greeting card"],
+              },
+              {
+                name: "Luxury",
+                price: "TODO: Add price",
+                contents: [
+                  "TODO: Add luxury selection",
+                  "Premium presentation",
+                  "Personalized note",
+                ],
+              },
+            ].map((tier) => (
+              <div
+                key={tier.name}
+                className="rounded-3xl border border-border bg-card p-6 shadow-soft"
+              >
+                <h3 className="font-display text-2xl text-primary">{tier.name}</h3>
+                <p className="mt-3 text-lg font-bold text-wood-dark">{tier.price}</p>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  {tier.contents.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+                <a
+                  href={waLink(`Hi, I'm interested in the ${tier.name} Diwali hamper for my team`)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="pill-btn mt-6 w-full bg-whatsapp px-5 py-3 text-sm text-primary-foreground"
+                >
+                  <MessageCircle className="h-4 w-4" /> Request Quote
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* GIFTING */}
       <section className="mx-auto max-w-7xl px-4 pb-8">
         <div className="grid items-center gap-8 rounded-[2.5rem] border border-border bg-card p-6 shadow-soft md:grid-cols-2 md:p-12">
@@ -217,7 +286,9 @@ function HomePage() {
               ))}
             </ul>
             <a
-              href={waLink("Hi Pango Dry Fruits! I'd like to enquire about gift hampers / bulk orders.")}
+              href={waLink(
+                "Hi Pango Dry Fruits! I'd like to enquire about gift hampers / bulk orders.",
+              )}
               target="_blank"
               rel="noreferrer"
               className="pill-btn mt-8 bg-whatsapp px-7 py-3.5 text-primary-foreground hover:opacity-90"
@@ -235,6 +306,7 @@ function HomePage() {
           />
         </div>
       </section>
+      <FeedbackForm />
     </>
   );
 }

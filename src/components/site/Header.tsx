@@ -21,9 +21,9 @@ export function Header() {
         <div className="marquee-track text-xs font-medium tracking-wide">
           {[0, 1].map((i) => (
             <span key={i} className="px-6">
-              🌿 Fresh Stock is Back! &nbsp;|&nbsp; Available Packing: 250g | 500g | 1 Kg
-              &nbsp;•&nbsp; 🎁 Customized Gift Hampers &nbsp;•&nbsp; 🚚 Fresh Packing on Every
-              Order &nbsp;•&nbsp;
+              🌿 250g Trial Order: Start with 250g. Free delivery. Pay after you receive it.
+              &nbsp;•&nbsp; Fresh Stock is Back! &nbsp;•&nbsp; 🎁 Customized Gift Hampers
+              &nbsp;•&nbsp; 🚚 Fresh Packing on Every Order &nbsp;•&nbsp;
             </span>
           ))}
         </div>

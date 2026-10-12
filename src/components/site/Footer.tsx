@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Award, Leaf, Tag, MessageCircle } from "lucide-react";
+import { Award, Leaf, Tag, MessageCircle, Instagram } from "lucide-react";
 import { Logo } from "./Logo";
 import { waLink } from "@/lib/products";
+
+const INSTAGRAM_URL = ""; // TODO: Add Instagram URL.
 
 export function Footer() {
   return (
@@ -32,6 +34,8 @@ export function Footer() {
               { to: "/shop", label: "Shop" },
               { to: "/about", label: "About" },
               { to: "/contact", label: "Contact" },
+              { to: "/delivery", label: "Delivery" },
+              { to: "/replacement", label: "Replacement" },
             ].map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-accent">
@@ -49,12 +53,28 @@ export function Footer() {
               <Award className="h-4 w-4 text-accent" /> Premium Quality
             </li>
             <li className="flex items-center gap-2">
-              <Tag className="h-4 w-4 text-accent" /> Best Prices
+              <Tag className="h-4 w-4 text-accent" /> Direct from source, no middlemen
             </li>
             <li className="flex items-center gap-2">
               <Leaf className="h-4 w-4 text-accent" /> Fresh Stock Available
             </li>
           </ul>
+          <div className="mt-5 space-y-1 text-sm text-primary-foreground/70">
+            <p>FSSAI: TODO: Add license number</p>
+            <p>TODO: Add full business address</p>
+            <p>Email: TODO: Add business email</p>
+            <p>Phone: +91 89201 63426</p>
+            {INSTAGRAM_URL && (
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-accent"
+              >
+                <Instagram className="h-4 w-4" /> Instagram
+              </a>
+            )}
+          </div>
           <ul className="mt-5 space-y-2 text-sm text-primary-foreground/70">
             <li>🎁 Customized Gift Hampers Available</li>
             <li>🏠 Bulk Orders Welcome</li>
