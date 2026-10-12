@@ -26,6 +26,9 @@ export function ReviewSection() {
         <h2 id="reviews-title" className="mt-2 font-display text-3xl text-primary md:text-4xl">
           Customer Reviews
         </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Reviews are published after a quick approval check.
+        </p>
         {reviews.length >= 3 && (
           <p className="mt-2 text-sm text-muted-foreground">
             {average} from {reviews.length} customers
