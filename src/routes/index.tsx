@@ -84,12 +84,6 @@ function HomePage() {
               250g Trial Order · Start with 250g. Free delivery. Pay after you receive it.
               {/* TODO: Confirm pay-on-delivery wording before publishing. */}
             </p>
-            <a
-              href="#hampers"
-              className="pill-btn mt-4 border border-primary/30 bg-card px-5 py-3 text-sm text-primary hover:bg-primary/10"
-            >
-              Corporate Diwali Hampers
-            </a>
           </div>
 
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
@@ -199,61 +193,6 @@ function HomePage() {
             >
               Our Story
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CORPORATE HAMPERS */}
-      <section id="hampers" className="bg-cream-deep/60 py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHeading eyebrow="Corporate gifting" title="Corporate Diwali Hampers" />
-          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground">
-            Thoughtful festive gifting for teams, clients and partners. {/* TODO: Confirm MOQ. */}
-            Bulk orders welcome — minimum order quantity: TODO.
-          </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                name: "Basic",
-                price: "TODO: Add price",
-                contents: ["TODO: Add dry fruit selection", "Festive box", "Greeting card"],
-              },
-              {
-                name: "Premium",
-                price: "TODO: Add price",
-                contents: ["TODO: Add premium selection", "Decorative hamper", "Greeting card"],
-              },
-              {
-                name: "Luxury",
-                price: "TODO: Add price",
-                contents: [
-                  "TODO: Add luxury selection",
-                  "Premium presentation",
-                  "Personalized note",
-                ],
-              },
-            ].map((tier) => (
-              <div
-                key={tier.name}
-                className="rounded-3xl border border-border bg-card p-6 shadow-soft"
-              >
-                <h3 className="font-display text-2xl text-primary">{tier.name}</h3>
-                <p className="mt-3 text-lg font-bold text-wood-dark">{tier.price}</p>
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  {tier.contents.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-                <a
-                  href={waLink(`Hi, I'm interested in the ${tier.name} Diwali hamper for my team`)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="pill-btn mt-6 w-full bg-whatsapp px-5 py-3 text-sm text-primary-foreground"
-                >
-                  <MessageCircle className="h-4 w-4" /> Request Quote
-                </a>
-              </div>
-            ))}
           </div>
         </div>
       </section>
