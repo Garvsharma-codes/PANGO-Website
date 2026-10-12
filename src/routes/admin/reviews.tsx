@@ -19,11 +19,11 @@ function AdminReviewsPage() {
     setError("");
   }
 
-  async function updateReview(id: string, status: Review["status"]) {
+  async function updateReview(id: string, approved: boolean) {
     await fetch("/api/reviews", {
       method: "PATCH",
       headers: { "content-type": "application/json", "x-admin-password": password },
-      body: JSON.stringify({ id, status }),
+      body: JSON.stringify({ id, approved }),
     });
     await loadReviews();
   }
@@ -63,21 +63,21 @@ function AdminReviewsPage() {
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">{review.message}</p>
                 <p className="mt-2 text-xs uppercase tracking-wide text-muted-foreground">
-                  {review.status}
+                  {review.approved ? "approved" : "pending / rejected"}
                 </p>
               </div>
               <div className="flex gap-2">
                 <button
-                  onClick={() => void updateReview(review.id, "approved")}
+                  onClick={() => void updateReview(review.id, true)}
                   className="pill-btn bg-primary px-4 py-2 text-sm text-primary-foreground"
                 >
                   Approve
                 </button>
                 <button
-                  onClick={() => void updateReview(review.id, "rejected")}
+                  onClick={() => void updateReview(review.id, false)}
                   className="pill-btn border border-border px-4 py-2 text-sm"
                 >
-                  Reject
+                  Reject / hide
                 </button>
               </div>
             </div>

@@ -75,7 +75,7 @@ export function ReviewSection() {
                   <p className="text-sm font-semibold">{review.name}</p>
                   <p className="text-xs text-muted-foreground">
                     {review.companyOrCity ? `${review.companyOrCity} · ` : ""}
-                    {new Date(review.date).toLocaleDateString("en-IN")}
+                    {new Date(review.createdAt).toLocaleDateString("en-IN")}
                   </p>
                 </div>
               </div>
