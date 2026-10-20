@@ -61,7 +61,11 @@ export function Footer() {
           </ul>
           <div className="mt-5 space-y-1 text-sm text-primary-foreground/70">
             <p>A1003, Civitech Sampriti Society, Sector 77, Noida</p>
-            <p>Email: khushbusomani@jobsandpositions.com</p>
+            <p>
+              Email:
+              <br />
+              khushbusomani@jobsandpositions.com
+            </p>
             <p>Phone: +91 89201 63426</p>
             {INSTAGRAM_URL && (
               <a
